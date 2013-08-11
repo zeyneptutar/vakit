@@ -5,8 +5,8 @@ class Connect
 	end
 
 	def self.shaber
-		doc = Nokogiri::HTML(open('http://www.samanyoluhaber.com/'))
-		x = doc.css('#hnmzT')
+		@doc = Nokogiri::HTML(open('http://www.samanyoluhaber.com/')) if @doc.nil?
+		x = @doc.css('#hnmzT')
 
 		times = []
 		x.each do |vakit|
@@ -14,11 +14,10 @@ class Connect
 			data_add = data.slice(0..data.length-2)
 			times.push(data_add)
 		end
-		times
 		vakit = {
 
-			imsak: times[0],
-			sabah: times[1],
+			imsak: "0"+times[0],
+			sabah: "0"+times[1],
 			oglen: times[2],
 			ikindi: times[3],
 			aksam: times[4],
