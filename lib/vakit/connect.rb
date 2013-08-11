@@ -5,7 +5,7 @@ class Connect
 	end
 
 	def self.shaber
-		@doc = Nokogiri::HTML(open('http://www.samanyoluhaber.com/')) if @doc.nil?
+		@doc ||= Nokogiri::HTML(open('http://www.samanyoluhaber.com/')) 
 		x = @doc.css('#hnmzT')
 
 		times = []
