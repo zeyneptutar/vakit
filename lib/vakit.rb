@@ -4,33 +4,37 @@ require 'Nokogiri'
 require 'open-uri'
 
 module Vakit
+
+	def initialize
+		@vakit ||= Vakit::Connect.shaber
+	end	
   
   def self.today
-  	Vakit::Connect.shaber
+  	@vakit
   end
 
   def self.imsak
-  	Vakit::Connect.shaber[:imsak]
+  	@vakit[:imsak]
   end
 
   def self.sabah
-  	Vakit::Connect.shaber[:sabah]
+  	@vakit[:sabah]
   end
 
   def self.oglen
-  	Vakit::Connect.shaber[:oglen]
+  	@vakit[:oglen]
   end
 
   def self.ikindi
-  	Vakit::Connect.shaber[:ikindi]
+  	@vakit[:ikindi]
   end
 
   def self.aksam
-  	Vakit::Connect.shaber[:aksam]
+  	@vakit[:aksam]
   end
 
   def self.yatsi
-  	Vakit::Connect.shaber[:yatsi]
+  	@vakit[:yatsi]
   end
 
 end
