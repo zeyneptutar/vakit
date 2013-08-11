@@ -1,29 +1,52 @@
 # Vakit
-
-TODO: Write a gem description
+Vakit is a small tool which fetches prayer times for Turkey from www.samanyoluhaber.com and persists data in a Rails way.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'vakit'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install vakit
+```ruby
+gem 'vakit'
+```
+and just do a `bundle install` as usual.
 
 ## Usage
+Using 'Vakit' is extremely easy. You're ready to go by just calling right keyword of returning hash:
 
-TODO: Write usage instructions here
+- For Fajr
+```console
+$ Vakit.imsak
+```
 
-## Contributing
+- For Shorook
+```console
+$ Vakit.sabah
+```
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+- For Zuhr
+```console
+$ Vakit.oglen
+```
+
+- For Asr
+```console
+$ Vakit.ikindi
+```
+
+- For Maghrib
+```console
+$ Vakit.aksam
+```
+
+- For Isha
+```console
+$ Vakit.yatsi
+```
+
+## Contribution
+
+Any kind of contribution is welcomed.
+
+## Testing
+We're using RSPEC.
+
+## License
+GPL
+Completly free :)
