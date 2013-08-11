@@ -6,7 +6,7 @@ require 'vakit/version'
 Gem::Specification.new do |spec|
   spec.name          = "vakit"
   spec.version       = Vakit::VERSION
-  spec.authors       = ["scary.mac"]
+  spec.authors       = ["Soner CAN"]
   spec.email         = ["soner2@gmail.com"]
   spec.description   = %q{A gem for easily getting salah times for Turkey}
   spec.summary       = %q{Salah times for Turkey}
