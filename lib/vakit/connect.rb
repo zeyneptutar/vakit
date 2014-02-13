@@ -11,13 +11,13 @@ class Connect
 		times = []
 		x.each do |vakit|
 			data = vakit.children.first.children.last.content
-			data_add = data.slice(0..data.length-2)
+			data_add = data.slice(0..data.length-1)
 			times.push(data_add)
 		end
 		vakit = {
 
-			imsak: "0"+times[0],
-			sabah: "0"+times[1],
+			imsak: times[0],
+			sabah: times[1],
 			oglen: times[2],
 			ikindi: times[3],
 			aksam: times[4],
