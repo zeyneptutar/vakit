@@ -33,4 +33,20 @@ module Vakit
   	Vakit::Connect.shaber[:yatsi]
   end
 
+  def self.kerahat?
+    time=Time.new
+    
+    imsak_time=Time.parse(Connect.shaber[:imsak])
+    
+    aksam_time=Time.parse(Connect.shaber[:aksam])
+
+    if TimeDifference.between(time,imsak_time).in_hours > 0.45 &&  TimeDifference.between(time,aksam_time).in_hours > 0.45
+      
+      puts "Saat su an #{Time.now.strftime("%H:%M")}. Kerahat vakti degil. Sunneti kilmayi unutmayin."
+    
+    else
+    
+      puts "Saat su an #{Time.now.strftime("%H:%M")}. Su an kerahat vaktindeyiz"
+    end
+  end
 end
