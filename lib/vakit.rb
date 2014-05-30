@@ -35,21 +35,30 @@ module Vakit
 
   def self.vakit?
   
-     time=Time.now
+    if Time.now > Connect.shaber[:imsak] && Time.now < Connect.shaber[:sabah]
     
-    Connect.shaber.each_cons(2) do |(key,value),(key2,value2)| 
-      
-     start_time=Time.now
-      
-      end_time=Time.parse(value2)
-      
-      remain_time=TimeDifference.between(start_time,end_time).in_hours
+    puts "Su an Imsak vaktindeyiz.Sabah namazina kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:sabah])).in_hours}"
+    
+    elsif Time.now > Connect.shaber[:sabah] && Time.now < Connect.shaber[:oglen]
 
-      if (time.hour - value.to_i) >= 0 && (time.hour - value2.to_i) <= 0
-        puts "Su an #{key} vaktindeyiz. #{key2} namazina kalan sure: #{remain_time}"
+    puts "Su an Sabah vaktindeyiz.Oglen namazina kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:oglen])).in_hours}"
     
-  
-  end
+    elsif Time.now > Connect.shaber[:oglen] && Time.now < Connect.shaber[:ikindi]
+
+    puts "Su an Oglen vaktindeyiz.Ikindi namazina kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:ikindi])).in_hours}."
+
+    elsif Time.now > Connect.shaber[:ikindi] && Time.now < Connect.shaber[:aksam]
+      
+    puts "Su an Ikindi vaktindeyiz.Aksam namazina kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:aksam])).in_hours}"
+   
+    elsif Time.now > Connect.shaber[:aksam] && Time.now < Connect.shaber[:yatsi]
+      
+    puts "Su an Aksam vaktindeyiz.Yatsi namazina kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:yatsi])).in_hours}"
+    
+    else Time.now > Connect.shaber[:yatsi] && Time.now < Connect.shaber[:imsak]
+       
+    puts "Su an Yatsi vaktindeyiz.Imsak vaktine kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:imsak])).in_hours}"
+
    end
   end
 end
