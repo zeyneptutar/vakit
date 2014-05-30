@@ -34,20 +34,22 @@ module Vakit
   end
 
   def self.vakit?
-    time=Time.now
+  
+     time=Time.now
     
-    Connect.shaber.each_cons(2) do |(k,v),(k2,v2)| 
+    Connect.shaber.each_cons(2) do |(key,value),(key2,value2)| 
       
-      start_time=time
+     start_time=Time.now
       
-      end_time=Time.parse(v)
+      end_time=Time.parse(value2)
       
       remain_time=TimeDifference.between(start_time,end_time).in_hours
-      
-      if (time.hour - v.to_i) > 0 && (time.hour - v2.to_i) < 0
-        
-        puts "Su an #{k} vaktindeyiz. #{k2} namazina kalan sure: #{remain_time}"
-    end
+
+      if (time.hour - value.to_i) >= 0 && (time.hour - value2.to_i) <= 0
+        puts "Su an #{key} vaktindeyiz. #{key2} namazina kalan sure: #{remain_time}"
+    
+  
+  end
    end
   end
 end
