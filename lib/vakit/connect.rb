@@ -16,6 +16,7 @@ class Connect
 		end
 		vakit = {
 
+
 			imsak: times[0],
 			sabah: times[1],
 			oglen: times[2],
@@ -27,6 +28,8 @@ class Connect
 		}
 
 	end
+	
 
+	
 end
 end
