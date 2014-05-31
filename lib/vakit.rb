@@ -34,7 +34,7 @@ module Vakit
   end
 
   def self.vakit?
-  
+
     if Time.now > Connect.shaber[:imsak] && Time.now < Connect.shaber[:sabah]
     
     puts "Su an Imsak vaktindeyiz.Sabah namazina kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:sabah])).in_hours}"
@@ -60,5 +60,7 @@ module Vakit
     puts "Su an Yatsi vaktindeyiz.Imsak vaktine kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:imsak])).in_hours}"
 
    end
-  end
+  
+     
+    end
 end
