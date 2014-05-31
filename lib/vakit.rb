@@ -39,21 +39,15 @@ module Vakit
   def self.kerahat?
 
     nowDate = Time.now
-    sabahDate = Chronic.parse(self.sabah)
-    aksamDate = Chronic.parse(self.aksam)
-    norm_date = Date.today
-
-    parsedSabah = Time.parse("#{norm_date} #{sabahDate.strftime "%H:%M:%S"}")
-    parsedAksam = Time.parse("#{norm_date} #{aksamDate.strftime "%H:%M:%S"}")
-    parsedNow= Time.parse("#{norm_date} #{nowDate.strftime "%H:%M:%S"}")
-
+    parsedSabah = Time.parse(self.sabah)
+    parsedAksam = Time.parse(self.aksam)
     kerahatSabah = parsedSabah + 45*60
     kerahatAksam = parsedAksam - 45*60
 
-    if (parsedSabah < parsedNow && kerahatSabah > parsedNow)
+    if (parsedSabah < nowDate && kerahatSabah > nowDate)
       puts "Sabah kerahat vakti. Saat " + nowDate.strftime("%I:%M %p") 
 
-    elsif (parsedAksam > parsedNow && kerahatAksam < parsedNow)
+    elsif (parsedAksam > nowDate && kerahatAksam < nowDate)
       puts "Aksam kerahat vakti. Saat " + nowDate.strftime("%I:%M %p") 
 
     else 
