@@ -46,14 +46,11 @@ module Vakit
 
     if (parsedSabah < nowDate && kerahatSabah > nowDate)
       puts "Sabah kerahat vakti. Saat " + nowDate.strftime("%I:%M %p") 
-
     elsif (parsedAksam > nowDate && kerahatAksam < nowDate)
       puts "Aksam kerahat vakti. Saat " + nowDate.strftime("%I:%M %p") 
-
     else 
       puts "Kerahat vakti degil. Saat " + nowDate.strftime("%I:%M %p") 
     end
-
 
   end
 
