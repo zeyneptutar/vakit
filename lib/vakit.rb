@@ -2,7 +2,6 @@ require "vakit/version"
 require 'vakit/connect'
 require 'nokogiri'
 require 'open-uri'
-require 'chronic'
 require 'time_diff'
 
 module Vakit
