@@ -49,7 +49,7 @@ end
             :port                 => 587,
             :domain               => 'z.tutar@gmail.com',
             :user_name            => 'z.tutar',
-            :password             => '@123955857@',
+            :password             => '**********',
             :authentication       => 'plain',
             :enable_starttls_auto => true  }
 
