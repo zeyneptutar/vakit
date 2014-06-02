@@ -47,8 +47,8 @@ Any kind of contribution is welcomed.
 
 ## Collabrators
 
-= Murat
-= Zeynep
+- Murat
+- Zeynep
 
 ## Testing
 We're using RSPEC.
