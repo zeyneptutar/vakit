@@ -45,6 +45,10 @@ $ Vakit.yatsi
 
 Any kind of contribution is welcomed.
 
+## Collabrators
+
+- Ben
+
 ## Testing
 We're using RSPEC.
 
