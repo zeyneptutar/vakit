@@ -4,4 +4,5 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'activesupport', :require => 'active_support'
-gem 'time_difference'
+
+gem 'time_diff'

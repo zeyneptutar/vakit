@@ -37,30 +37,31 @@ module Vakit
 
     if Time.now > Connect.shaber[:imsak] && Time.now < Connect.shaber[:sabah]
     
-    puts "Su an Imsak vaktindeyiz.Sabah namazina kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:sabah])).in_hours}"
+    puts "Su an Imsak vaktindeyiz.Sabah namazina kalan sure #{Time.diff(Time.now, Connect.shaber[:sabah], '%h:%m')[:diff]}"
     
     elsif Time.now > Connect.shaber[:sabah] && Time.now < Connect.shaber[:oglen]
 
-    puts "Su an Sabah vaktindeyiz.Oglen namazina kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:oglen])).in_hours}"
+    puts "Su an Sabah vaktindeyiz.Oglen namazina kalan sure #{Time.diff(Time.now, Connect.shaber[:oglen], '%h:%m')[:diff]}"
     
     elsif Time.now > Connect.shaber[:oglen] && Time.now < Connect.shaber[:ikindi]
 
-    puts "Su an Oglen vaktindeyiz.Ikindi namazina kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:ikindi])).in_hours}."
+    puts "Su an Oglen vaktindeyiz.Ikindi namazina kalan sure #{Time.diff(Time.now, Connect.shaber[:ikindi], '%h:%m')[:diff]}."
 
     elsif Time.now > Connect.shaber[:ikindi] && Time.now < Connect.shaber[:aksam]
       
-    puts "Su an Ikindi vaktindeyiz.Aksam namazina kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:aksam])).in_hours}"
+    puts "Su an Ikindi vaktindeyiz.Aksam namazina kalan sure #{Time.diff(Time.now, Connect.shaber[:aksam], '%h:%m')[:diff]}"
    
     elsif Time.now > Connect.shaber[:aksam] && Time.now < Connect.shaber[:yatsi]
       
-    puts "Su an Aksam vaktindeyiz.Yatsi namazina kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:yatsi])).in_hours}"
+    puts "Su an Aksam vaktindeyiz.Yatsi namazina kalan sure #{Time.diff(Time.now, Connect.shaber[:yatsi], '%h:%m')[:diff]}"
     
     else Time.now > Connect.shaber[:yatsi] && Time.now < Connect.shaber[:imsak]
        
-    puts "Su an Yatsi vaktindeyiz.Imsak vaktine kalan sure #{TimeDifference.between(Time.now, Time.parse(Connect.shaber[:imsak])).in_hours}"
+    puts "Su an Yatsi vaktindeyiz.Imsak vaktine kalan sure #{Time.diff(Time.now, Connect.shaber[:imsak], '%h:%m')[:diff]}"
 
    end
   
      
+    
     end
 end
