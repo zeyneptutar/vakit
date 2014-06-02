@@ -4,3 +4,5 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'time_difference'
+
+gem 'time_diff'
