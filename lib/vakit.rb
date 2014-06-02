@@ -34,34 +34,39 @@ module Vakit
   end
 
   def self.vakit?
+    time=Time.now
 
-    if Time.now > Connect.shaber[:imsak] && Time.now < Connect.shaber[:sabah]
-    
-    puts "Su an Imsak vaktindeyiz.Sabah namazina kalan sure #{Time.diff(Time.now, Connect.shaber[:sabah], '%h:%m')[:diff]}"
-    
-    elsif Time.now > Connect.shaber[:sabah] && Time.now < Connect.shaber[:oglen]
+    Connect.shaber.each_cons(2) do  |(k,v),(k2,v2)| 
 
-    puts "Su an Sabah vaktindeyiz.Oglen namazina kalan sure #{Time.diff(Time.now, Connect.shaber[:oglen], '%h:%m')[:diff]}"
-    
-    elsif Time.now > Connect.shaber[:oglen] && Time.now < Connect.shaber[:ikindi]
 
-    puts "Su an Oglen vaktindeyiz.Ikindi namazina kalan sure #{Time.diff(Time.now, Connect.shaber[:ikindi], '%h:%m')[:diff]}."
+    if (time - Time.parse(v)) > 0 && (time - Time.parse(v2)) < 0
+      puts "Su an #{k} vaktindeyiz. #{k2} vaktine kalan sure #{Time.diff(time,Time.parse(v2),'%h:%m')[:diff]}"
+end
+     end
 
-    elsif Time.now > Connect.shaber[:ikindi] && Time.now < Connect.shaber[:aksam]
-      
-    puts "Su an Ikindi vaktindeyiz.Aksam namazina kalan sure #{Time.diff(Time.now, Connect.shaber[:aksam], '%h:%m')[:diff]}"
-   
-    elsif Time.now > Connect.shaber[:aksam] && Time.now < Connect.shaber[:yatsi]
-      
-    puts "Su an Aksam vaktindeyiz.Yatsi namazina kalan sure #{Time.diff(Time.now, Connect.shaber[:yatsi], '%h:%m')[:diff]}"
-    
-    else Time.now > Connect.shaber[:yatsi] && Time.now < Connect.shaber[:imsak]
-       
-    puts "Su an Yatsi vaktindeyiz.Imsak vaktine kalan sure #{Time.diff(Time.now, Connect.shaber[:imsak], '%h:%m')[:diff]}"
 
-   end
-  
-     
+
     
+    end
+
+    def self.hatirlat(email)
+      options = { :address        => "smtp.gmail.com",
+            :port                 => 587,
+            :domain               => 'z.tutar@gmail.com',
+            :user_name            => 'z.tutar',
+            :password             => '**********',
+            :authentication       => 'plain',
+            :enable_starttls_auto => true  }
+
+      Mail.defaults do 
+      delivery_method :smtp, options
+     end
+     Mail.deliver do
+     to  email
+     from 'z.tutar@gmail.com'
+     subject 'namaz vakti hatirlatma servisi'
+     body '#{self.vakit?}'
+end
+
     end
 end
