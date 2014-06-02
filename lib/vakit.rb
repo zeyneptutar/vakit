@@ -41,27 +41,25 @@ module Vakit
     kerahat_aksam=aksam - 45*60
 
     if Time.now > sabah && Time.now < kerahat_sabah
-      puts "Saat su an #{Time.now.strftime("%H:%M")}. Sabah kerahat vakti"
-    elsif  Time.now < aksam && Time.now > kerahat_aksam
-      puts "Saat su an #{Time.now.strftime("%H:%M")}. Aksam kerahat vakti"
-    else 
-      if self.prayer_time == Connect.shaber[:imsak]
-        puts "Saat su an #{Time.now.strftime("%H:%M")}. Kerahat vakti degil. Sabah kerahat vaktine kalan sure #{Time.diff(time, sabah, '%h:%m')[:diff]}"
-      else
-        puts "Saat su an #{Time.now.strftime("%H:%M")}. Kerahat vakti degil. Ikindi kerahat vaktine kalan sure #{Time.diff(time, aksam, '%h:%m')[:diff]}"
-   end
- end
+        puts "Saat su an #{Time.now.strftime("%H:%M")}. Sabah kerahat vakti"
+      elsif  Time.now < aksam && Time.now > kerahat_aksam
+        puts "Saat su an #{Time.now.strftime("%H:%M")}. Aksam kerahat vakti"
+      else 
+        if self.prayer_time == Connect.shaber[:imsak]
+          puts "Saat su an #{Time.now.strftime("%H:%M")}. Kerahat vakti degil. Sabah kerahat vaktine kalan sure #{Time.diff(time, sabah, '%h:%m')[:diff]}"
+        else
+          puts "Saat su an #{Time.now.strftime("%H:%M")}. Kerahat vakti degil. Ikindi kerahat vaktine kalan sure #{Time.diff(time, aksam, '%h:%m')[:diff]}"
+      end
+    end
 end
    
    def self.prayer_time 
-     
      Connect.shaber.each_cons(2) do |(k,v), (k2,v2)|
       if (Time.now - Time.parse(v)) > 0 && (Time.now - Time.parse(v2))<0
         return v
       end
-    end
-    
-    
-end
+    end    
+   end
+
 end
 
