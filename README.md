@@ -45,6 +45,11 @@ $ Vakit.yatsi
 
 Any kind of contribution is welcomed.
 
+## Collabrators
+
+= Murat
+= Zeynep
+
 ## Testing
 We're using RSPEC.
 
