@@ -31,5 +31,7 @@ module Vakit
 		end
 
 	end
+
+end
 	
 
