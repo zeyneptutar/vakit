@@ -1,36 +1,39 @@
-require "vakit/version"
+require 'vakit/version'
 require 'vakit/connect'
+require 'vakit/vakit_log'
 require 'nokogiri'
 require 'open-uri'
 
 module Vakit
+
+  LOGGER = Vakit::VakitLog
   
   def self.today
-  	Vakit::Connect.shaber
+    LOGGER.info(" #{Vakit::Connect.shaber}\nGunluk namaz vakitleri goruntulendi ")
   end
 
   def self.imsak
-  	Vakit::Connect.shaber[:imsak]
+    LOGGER.info("#{Vakit::Connect.shaber[:imsak]}\nImsak vakti goruntulendi")
   end
 
   def self.sabah
-  	Vakit::Connect.shaber[:sabah]
+     LOGGER.info("#{Vakit::Connect.shaber[:sabah]} \nSabah vakti goruntulendi")
   end
 
   def self.oglen
-  	Vakit::Connect.shaber[:oglen]
+     LOGGER.info("#{Vakit::Connect.shaber[:oglen]}\nOglen vakti goruntulendi")
   end
 
   def self.ikindi
-  	Vakit::Connect.shaber[:ikindi]
+     LOGGER.info("#{Vakit::Connect.shaber[:ikindi]}\nIkindi vakti goruntulendi")
   end
 
   def self.aksam
-  	Vakit::Connect.shaber[:aksam]
+     LOGGER.info("#{Vakit::Connect.shaber[:aksam]}\nAksam vakti goruntulendi")
   end
 
   def self.yatsi
-  	Vakit::Connect.shaber[:yatsi]
+     LOGGER.info("#{Vakit::Connect.shaber[:yatsi]}\nYatsi vakti goruntulendi")
   end
 
 end
