@@ -62,7 +62,7 @@ module Vakit
             puts "Saat su an #{Time.now.strftime("%H:%M")}. Kerahat vakti degil. Ikindi kerahat vaktine kalan sure #{Time.diff(time, kerahat_aksam, '%h:%m')[:diff]}"
         end
       end
-      LOGGER.info("Kerahat vakti soruldu")
+      LOGGER.info("Kerahat vakti sorgulandi")
   end
    
    def self.prayer_time 
