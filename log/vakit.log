@@ -1,11 +1,4 @@
-I, [2014-06-09 11:58:07#3355]  INFO -- : Imsak vakti goruntulendi
-I, [2014-06-09 11:58:38#3355]  INFO -- : Gunluk namaz vakitleri goruntulendi
-I, [2014-06-09 11:59:18#3366]  INFO -- : Imsak vakti goruntulendi
-I, [2014-06-09 12:00:31#3386]  INFO -- :  {:imsak=>"03:24", :sabah=>"05:25", :oglen=>"13:10", :ikindi=>"17:08", :aksam=>"20:44", :yatsi=>"22:33"}  Gunluk namaz vakitleri goruntulendi 
-I, [2014-06-09 12:01:16#3396]  INFO -- :  {:imsak=>"03:24", :sabah=>"05:25", :oglen=>"13:10", :ikindi=>"17:08", :aksam=>"20:44", :yatsi=>"22:33"}  
- Gunluk namaz vakitleri goruntulendi 
-I, [2014-06-09 12:03:58#3409]  INFO -- :  {:imsak=>"03:24", :sabah=>"05:25", :oglen=>"13:10", :ikindi=>"17:08", :aksam=>"20:44", :yatsi=>"22:33"}
-Gunluk namaz vakitleri goruntulendi 
-I, [2014-06-09 12:28:35#5133]  INFO -- : Gunluk namaz vakitleri goruntulendi 
-I, [2014-06-09 12:29:01#5143]  INFO -- : Gunluk namaz vakitleri goruntulendi 
-I, [2014-06-09 12:30:32#5153]  INFO -- : Imsak vakti goruntulendi
+I, [2014-06-09 12:41:43#5424]  INFO -- : Kerahat vakti soruldu
+I, [2014-06-09 12:42:21#5435]  INFO -- : 
+**Kerahat vakti soruldu
+I, [2014-06-09 12:46:20#5470]  INFO -- : Kerahat vakti soruldu
