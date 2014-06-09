@@ -46,9 +46,9 @@ module Vakit
         puts "Saat su an #{Time.now.strftime("%H:%M")}. Aksam kerahat vakti"
       else 
         if self.prayer_time == Connect.shaber[:imsak]
-          puts "Saat su an #{Time.now.strftime("%H:%M")}. Kerahat vakti degil. Sabah kerahat vaktine kalan sure #{Time.diff(time, sabah, '%h:%m')[:diff]}"
+          puts "Saat su an #{Time.now.strftime("%H:%M")}. Kerahat vakti degil. Sabah kerahat vaktine kalan sure #{Time.diff(time, kerahat_sabah, '%h:%m')[:diff]}"
         else
-          puts "Saat su an #{Time.now.strftime("%H:%M")}. Kerahat vakti degil. Ikindi kerahat vaktine kalan sure #{Time.diff(time, aksam, '%h:%m')[:diff]}"
+          puts "Saat su an #{Time.now.strftime("%H:%M")}. Kerahat vakti degil. Ikindi kerahat vaktine kalan sure #{Time.diff(time, kerahat_aksam, '%h:%m')[:diff]}"
       end
     end
 end
