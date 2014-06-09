@@ -60,7 +60,7 @@ module Vakit
             :port                 => 587,
             :domain               => 'z.tutar@gmail.com',
             :user_name            => 'z.tutar',
-            :password             => '*********',
+            :password             => '_________',
             :authentication       => 'plain',
             :enable_starttls_auto => true  }
 
